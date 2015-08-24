@@ -1,0 +1,19 @@
+{
+  "name"         : "ADPB",
+  "version"      : "0.0.0",
+  "description"  : "Active Directory Phone Book",
+  "main"         : "server.js",
+  "author"       : "curdwithraisins",
+  "dependencies" : {
+    "activedirectory" : "~0.7.0",
+    "async"           : "~0.1.22",
+    "body-parser"     : "~1.4.3",
+    "bunyan"          : "~1.3.5",	
+    "express"         : "~4.6.1",
+    "ldapjs"          : "~0.7.1",
+    "method-override" : "~2.1.1",	
+    "mongoose"        : "~3.8.13",
+    "morgan"          : "~1.1.1",
+    "underscore"      : "~1.4.3"
+  }
+}

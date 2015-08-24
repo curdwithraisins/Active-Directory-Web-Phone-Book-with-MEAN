@@ -1,0 +1,86 @@
+﻿<!doctype html>
+<html ng-app="phoneBook">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Active Directory Phone Book</title>
+	<link href="img/phone.ico" rel="shortcut icon">
+	<link href="css/style.css" rel="stylesheet">
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/style.js"></script>
+
+</head>
+<body ng-controller="UsersController">
+
+<header>
+	<div class="wrapper">
+		<div class="title">
+			<span class="first-title">Active Directory</span>
+			<p><span class="second-title">Phone Book</span>
+		</div>
+		<div class="search-wrapper">
+			<form class="search">
+				<input type="search" id="search" placeholder="Поиск">
+			</form>
+		</div>
+		<ul class="autocomplete"></ul>
+	</div>
+</header>
+
+<section class="wrapper" ng-controller="NavBase">
+
+	<nav>
+		<ul class="depat">
+			<li ng-repeat="navItim in navBar">
+				<div class="pointer" ng-class="{close: !navItim.users, open: navItim.show, check: navItim.check}" ng-click="isUsers(navItim)">
+					{{navItim.name}}
+				</div>
+				<ul ng-show="navItim.show" class="animation-show">
+					<li ng-repeat="subNavItim in navItim.sub">
+						<div class="pointer sub-pointer" ng-class="{close: !subNavItim.users, open: subNavItim.show, check: subNavItim.check}" ng-click="isUsers(subNavItim)">
+							{{subNavItim.name}}
+						</div>
+						<ul ng-show="subNavItim.show" class="animation-show" >
+							<li ng-repeat="subSubNavItim in subNavItim.sub">
+								<div class="pointer sub-sub-pointer" ng-class="{check: subSubNavItim.check}" ng-click="isUsers(subSubNavItim)">
+									{{subSubNavItim.name}}
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+
+
+	<div class="people" ng-controller="UsersTableBase">
+		<table class="table">
+			<tr class="table-title">
+				<td></td><td>Имя</td><td>Расположение</td><td>Номер телефона</td>
+			</tr>
+			<tr data-path="" class="user-tr" ng-class="{person: isPerson, open: user.show}" ng-repeat="user in users" ng-click="Clicable(user, isPerson)">
+				<td></td>
+				<td>{{user.displayName}}</td>
+				<td>{{user.physicalDeliveryOfficeName}}</td>
+				<td>{{user.telephoneNumber}}</td>
+				<td ng-class="{info: isPerson}" ng-show="user.show">test</td>
+			</tr>
+		</table>
+	</div>
+
+</section>
+
+<div class="preloader">
+    <div class="spinner"></div>
+</div>
+
+</body>
+</html>

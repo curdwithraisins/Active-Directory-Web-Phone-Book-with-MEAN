@@ -1,0 +1,32 @@
+﻿[
+  {
+	"displayName": "Name1",
+	"physicalDeliveryOfficeName": "OfficeName1",
+	"telephoneNumber": "+380623811648"
+  },
+  {
+	"displayName": "Name2",
+	"physicalDeliveryOfficeName": "OfficeName2",
+	"telephoneNumber": "+380623811648"
+  },
+  {
+	"displayName": "Name3",
+	"physicalDeliveryOfficeName": "OfficeName3",
+	"telephoneNumber": "+380623811648"
+  },
+  {
+	"displayName": "Name4",
+	"physicalDeliveryOfficeName": "OfficeName4",
+	"telephoneNumber": "+380623811648"
+  },
+  {
+	"displayName": "Name5",
+	"physicalDeliveryOfficeName": "OfficeName5",
+	"telephoneNumber": "+380623811648"
+  },
+  {
+	"displayName": "Name6",
+	"physicalDeliveryOfficeName": "OfficeName6",
+	"telephoneNumber": "+380623811648 +380623811648"
+  }
+  ]
