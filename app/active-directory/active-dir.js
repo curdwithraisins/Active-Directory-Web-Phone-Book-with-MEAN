@@ -47,7 +47,7 @@ ActiveDirBase.prototype.findMenu = function findMenu(callback) {
         else {
             _.each(groups, function (group) {
                 var split = group.dn.split(',');
-                group.path = split.slice(2, split.length-4); //количество каталогов в начале + им§ группы
+                group.path = split.slice(2, split.length-4);
                 group.path = group.path.reverse();
                 group.path.forEach(function(itim, i, arr) {
                     arr[i] = itim.substring(3, itim.length);
@@ -58,7 +58,7 @@ ActiveDirBase.prototype.findMenu = function findMenu(callback) {
             var navBar = [];
 
             navBar[navBar.length] = {
-                'name': 'Р“Р»Р°РІРЅР°СЏ',
+                'name': 'Home',
                 'cn': 'home',
                 'sub': [],
                 'show': false,
@@ -88,9 +88,6 @@ ActiveDirBase.prototype.findMembers = function findMembers(cn, callback) {
         }
         if (! users) console.log('Group: ' + groupName + ' not found.');
         else {
-            _.each(users, function (user) {
-                user.show = false;
-            });
             if (callback) callback(null, users);
         }
     });

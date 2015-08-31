@@ -1,24 +1,32 @@
 angular.module('phoneBookControllers', [])
 
-	.controller('UsersController', ['$scope', function ($scope) {
-		$scope.users = [];
-	}])
+	.controller('UsersController', function () {
 
-	.controller('NavBase', ['$scope', '$http', 'Depat', function ($scope, $http, Depat) {
+	})
+
+	.controller('NavBase', function ($scope, $resource, Depat) {
 		var prevItim = {};
 
-		Depat.get()
+		//for correct work with ActiveDirectory
+		/*Depat.get()
 			.success(function (data) {
 				$scope.navBar = data;
 				prevItim = $scope.navBar[0];
 			});
+			*/
 
-		var users = 'home';
+		//for tests
+		var NavResource = $resource('js/depat.json', {}, {
+			getJSON: {method: 'GET', isArray: true}});
+		NavResource.getJSON(function (data) {
+			$scope.navBar = data;
+			prevItim = data[0];
+		});
 
-		Depat.query(users)
+		Depat.query('home')
 			.success(function (data) {
-				$scope.isPerson = false;
 				$scope.users = data;
+				$scope.isPerson = true;
 			});
 
 		$scope.isUsers = function (navItim) {
@@ -28,25 +36,16 @@ angular.module('phoneBookControllers', [])
 				Depat.query(navItim.cn)
 					.success(function (data) {
 						$scope.users = data;
+						$scope.isPerson = navItim.cn != 'home';
 						navItim.check = true;
-						$scope.isPerson = true;
-
-						if (navItim.cn == 'home')
-							$scope.isPerson = false;
 					});
 				prevItim = navItim;
 			} else {
 				navItim.show = !navItim.show;
 			}
-		}
-	}])
+		};
+	})
 
-	.controller('UsersTableBase', ['$scope', '$http', 'Users',
-		function ($scope, $http, Users) {
-			$scope.Clicable = function(user, isPerson) {
-				if (isPerson) {
-					user.show = !user.show;
-				}
-			}
-		}]
-);
+	.controller('UsersTableBase', function ($scope, Users) {
+
+		});

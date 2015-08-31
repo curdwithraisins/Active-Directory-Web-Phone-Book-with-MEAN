@@ -39,19 +39,25 @@
 	<nav>
 		<ul class="depat">
 			<li ng-repeat="navItim in navBar">
-				<div class="pointer" ng-class="{close: !navItim.users, open: navItim.show, check: navItim.check}" ng-click="isUsers(navItim)">
+				<a class="pointer"
+				   ng-class="{close: !navItim.users, open: navItim.show, check: navItim.check}"
+				   ng-click="isUsers(navItim)">
 					{{navItim.name}}
-				</div>
-				<ul ng-show="navItim.show" class="animation-show">
+				</a>
+				<ul ng-show="navItim.show" class="show-nav">
 					<li ng-repeat="subNavItim in navItim.sub">
-						<div class="pointer sub-pointer" ng-class="{close: !subNavItim.users, open: subNavItim.show, check: subNavItim.check}" ng-click="isUsers(subNavItim)">
+						<a class="pointer sub-pointer"
+							 ng-class="{close: !subNavItim.users, open: subNavItim.show, check: subNavItim.check}"
+							 ng-click="isUsers(subNavItim)">
 							{{subNavItim.name}}
-						</div>
-						<ul ng-show="subNavItim.show" class="animation-show" >
+						</a>
+						<ul ng-show="subNavItim.show" class="show-nav" >
 							<li ng-repeat="subSubNavItim in subNavItim.sub">
-								<div class="pointer sub-sub-pointer" ng-class="{check: subSubNavItim.check}" ng-click="isUsers(subSubNavItim)">
+								<a class="pointer sub-sub-pointer"
+								   ng-class="{check: subSubNavItim.check}"
+								   ng-click="isUsers(subSubNavItim)">
 									{{subSubNavItim.name}}
-								</div>
+								</a>
 							</li>
 						</ul>
 					</li>
@@ -66,12 +72,15 @@
 			<tr class="table-title">
 				<td></td><td>Имя</td><td>Расположение</td><td>Номер телефона</td>
 			</tr>
-			<tr data-path="" class="user-tr" ng-class="{person: isPerson, open: user.show}" ng-repeat="user in users" ng-click="Clicable(user, isPerson)">
+			<tr data-path="" class="user-tr"
+				ng-repeat="user in users"
+				ng-class="{person: isPerson, open: click}"
+				ng-click="click=!click">
 				<td></td>
 				<td>{{user.displayName}}</td>
 				<td>{{user.physicalDeliveryOfficeName}}</td>
 				<td>{{user.telephoneNumber}}</td>
-				<td ng-class="{info: isPerson}" ng-show="user.show">test</td>
+				<td ng-class="{info: isPerson}" ng-show="click">test</td>
 			</tr>
 		</table>
 	</div>

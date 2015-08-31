@@ -1,3 +1,3 @@
-$(window).load(function(){
+window.onload = function(){
     $('.preloader').fadeOut();
-});
+};

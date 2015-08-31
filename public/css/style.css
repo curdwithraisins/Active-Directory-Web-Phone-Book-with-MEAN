@@ -157,24 +157,25 @@ section {
 	position: absolute;	
 	top: 0;
 	left: 0;
-	width: 320px;
+	max-width: 320px;
+	width: 27%;
+	min-width: 220px;
 	padding-bottom: 100px;
 }
 
 .pointer{
+	display: block;
 	color: #F3F3F5;
-	vertical-align: baseline;
 	font-weight: 600;
 	background-color: #4E5359;
 	border-bottom: 1px solid #555B61;
 	cursor: pointer;
-	padding: 10px 7%;
+	height: 40px;
+	vertical-align: baseline;
+	line-height: 40px;
+	padding-left: 7%;
 	-webkit-transition: 0.2s;
 	transition: 0.2s;
-}
-
-.pointer div {
-	display: inline-block;
 }
 
 .pointer:hover {
@@ -198,6 +199,7 @@ section {
 .check:after {
 	font-family: 'FontAwesome';
 	content: "\f054";
+	padding-right: 10px;
 	float: right;
 }
 
@@ -216,16 +218,31 @@ section {
 	transform: rotate(90deg);
 }
 
-.animation-show.ng-hide-add, .animation-show.ng-hide-remove {
-	-webkit-transition: all 0.5s ease 0s;
-	transition: all 0.5s ease 0s;
+.show-nav {
+	max-height: 280px;
+	width: 100%;
+	display: block;
+	overflow: hidden;
+}
+
+.show-nav.ng-hide {
+	max-height: 0px;
+}
+
+.show-nav.ng-hide-add, .show-nav.ng-hide-remove {
+	-webkit-transition: max-height ease 0.5s;
+	-moz-transition: max-height ease 0.5s;
+	-o-transition: max-height ease 0.5s;
+	transition: max-height ease 0.5s;
 }
 
 /*---------------------------------------------------------------------------*/
 
 .people {
 	position: static;
-	width: 1090px;
+	max-width: 1090px;
+	width: 70%;
+	min-width: 600px;
 	float: right;
 	padding-bottom: 100px;
 }
@@ -275,11 +292,14 @@ td:nth-child(4) {
 .user-tr {
 	background-color: white;
 	color: #45464B;
-	transition-duration: 0.2s;
 	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08);
 }
 
 .user-tr:hover{
+	-webkit-transition: all ease 0.5s;
+	-moz-transition: all ease 0.5s;
+	-o-transition: all ease 0.5s;
+	transition: all ease 0.5s;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -303,10 +323,22 @@ td:nth-child(4) {
 
 .info {
 	height: 100px;
-	width: 100px;
+	width: 100%;
 	display: block;
 	background: #FFF;
-	padding: 5px 30px;
+	padding: 0;
+	overflow: hidden;
+}
+
+.info.ng-hide {
+	height: 0px;
+}
+
+.info.ng-hide-add, .info.ng-hide-remove {
+	-webkit-transition: height ease 0.5s;
+	-moz-transition: height ease 0.5s;
+	-o-transition: height ease 0.5s;
+	transition: height ease 0.5s;
 }
 
 /*---------------------------------------------------------------------------*/

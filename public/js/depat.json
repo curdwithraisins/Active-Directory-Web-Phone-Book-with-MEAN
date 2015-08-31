@@ -1,0 +1,118 @@
+[
+  {
+    "name": "Home",
+    "cn": "home",
+    "sub": [],
+    "show": false,
+    "users": true,
+    "check": true
+  },
+  {
+    "name": "Dep1",
+    "cn": "home",
+    "sub": [
+      {
+        "name": "Dep1",
+        "cn": "home",
+        "sub": [],
+        "show": false,
+        "users": true,
+        "check": false
+      },
+      {
+        "name": "Dep1",
+        "cn": "home",
+        "sub": [
+          {
+            "name": "Dep1",
+            "cn": "home",
+            "sub": [],
+            "show": false,
+            "users": true,
+            "check": false
+          }
+        ],
+        "show": false,
+        "users": false,
+        "check": false
+      }
+    ],
+    "show": false,
+    "users": false,
+    "check": false
+  },
+  {
+    "name": "Dep2",
+    "cn": "home",
+    "sub": [],
+    "show": false,
+    "users": true,
+    "check": false
+  },
+  {
+    "name": "Dep3",
+    "cn": "home",
+    "sub": [],
+    "show": false,
+    "users": true,
+    "check": false
+  },
+  {
+    "name": "Dep4",
+    "cn": "home",
+    "sub": [
+      {
+        "name": "Dep4",
+        "cn": "home",
+        "sub": [],
+        "show": false,
+        "users": true,
+        "check": false
+      },
+      {
+        "name": "Dep4",
+        "cn": "home",
+        "sub": [
+          {
+            "name": "Dep4",
+            "cn": "home",
+            "sub": [],
+            "show": false,
+            "users": true,
+            "check": false
+          },
+          {
+            "name": "Dep4",
+            "cn": "home",
+            "sub": [],
+            "show": false,
+            "users": true,
+            "check": false
+          },
+          {
+            "name": "Dep4",
+            "cn": "home",
+            "sub": [],
+            "show": false,
+            "users": true,
+            "check": false
+          }
+        ],
+        "show": false,
+        "users": false,
+        "check": false
+      },
+      {
+        "name": "Dep4",
+        "cn": "home",
+        "sub": [],
+        "show": false,
+        "users": true,
+        "check": false
+      }
+    ],
+    "show": false,
+    "users": false,
+    "check": false
+  }
+]
