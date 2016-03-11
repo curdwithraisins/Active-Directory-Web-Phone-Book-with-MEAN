@@ -3,7 +3,6 @@
 Phone Book with information about employees base on Active Directory.
 Using JavaScript, Node.js and MongoDB.
 
-#### In progress! Not adaptive yet!
 ###### Work in combination with Active Directory!
 
 # Config
