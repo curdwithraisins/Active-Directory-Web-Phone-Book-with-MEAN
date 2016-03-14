@@ -5,6 +5,8 @@ Using JavaScript, Node.js and MongoDB.
 
 ###### Work in combination with Active Directory!
 
+![preview](https://dl.dropboxusercontent.com/u/37751316/phonebook.png)
+
 # Config
 
 You mast connect your AD using connect.js in folder connect.
