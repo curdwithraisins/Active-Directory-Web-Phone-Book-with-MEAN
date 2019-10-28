@@ -12,7 +12,7 @@
     "connect-mongo": "^0.8.2",
     "express": "~4.6.1",
     "ldapjs": "~0.7.1",
-    "method-override": "~2.1.1",
+    "method-override": "~3.0.0",
     "mongoose": "~5.7.7",
     "morgan": "~1.9.1",
     "underscore": "~1.4.3"
